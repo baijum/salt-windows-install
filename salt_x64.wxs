@@ -45,22 +45,22 @@
         <Component Id='PYTHON27_DLL'
           Guid='{24AEB8E6-3673-4401-828E-C5A3B59B9D64}'>
           <File Id='python27_dll' Name='python27.dll'
-           DiskId='1' Source='deps/salt_x64/Python27/python27.dll' />
+           DiskId='1' Source='deps/salt/Python27/python27.dll' />
         </Component>
         <Component Id='PYTHONCOM27_DLL'
           Guid='{24AEB8E6-3673-4401-828E-C6A3B59B9D64}'>
           <File Id='pythoncom27_dll' Name='pythoncom27.dll'
-           DiskId='1' Source='deps/salt_x64/Python27/Lib/site-packages/pywin32_system32/pythoncom27.dll' />
+           DiskId='1' Source='deps/salt/Python27/Lib/site-packages/pywin32_system32/pythoncom27.dll' />
         </Component>
         <Component Id='PYTHONCOMLOADER27_DLL'
           Guid='{24AEB8E6-3673-4401-828E-C7A3B59B9D64}'>
           <File Id='pythoncomloader27_dll' Name='pythoncomloader27.dll'
-           DiskId='1' Source='deps/salt_x64/Python27/Lib/site-packages/pywin32_system32/pythoncomloader27.dll' />
+           DiskId='1' Source='deps/salt/Python27/Lib/site-packages/pywin32_system32/pythoncomloader27.dll' />
         </Component>
         <Component Id='PYWINTYPES27_DLL'
           Guid='{24AEB8E6-3673-4401-828E-C8A3B59B9D64}'>
           <File Id='pywintypes27_dll' Name='pywintypes27.dll'
-           DiskId='1' Source='deps/salt_x64/Python27/Lib/site-packages/pywin32_system32/pywintypes27.dll' />
+           DiskId='1' Source='deps/salt/Python27/Lib/site-packages/pywin32_system32/pywintypes27.dll' />
         </Component>
       </Directory>
     </Directory>
