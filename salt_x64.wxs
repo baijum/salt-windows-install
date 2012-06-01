@@ -1,0 +1,92 @@
+<?xml version='1.0'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+<Product
+    Id='{29AEB8E7-3773-4403-828E-C5A3B59B9D62}'
+    Name='Salt'
+    Language='1033'
+    Version='1.0.0.1'
+    Manufacturer='Salt Community'
+    UpgradeCode='{29AEB8E7-3773-4403-828E-C5A3B59B9D63}'>
+  <Package
+    Description='Salt Windows Installer package'
+    Comments='Salt Windows Installer with all dependencies'
+    Manufacturer='Salt Community'
+    InstallerVersion='200'
+    Compressed='yes' />
+
+  <Media Id='1' Cabinet='salt.cab' EmbedCab='yes' />
+
+  <Directory Id='TARGETDIR' Name='SourceDir'>
+
+    <Directory Id='WINDOWSDir' Name='WINDOWS'>
+      <Directory Id='System32Dir' Name='System32'>
+        <Component Id='libeay32_dll'
+          Guid='{24AEB8E6-3673-4411-828E-C5A3B59B9D64}'>
+          <File Id='LIBEAY32_DLL' Name='libeay32.dll'
+           DiskId='1' Source='deps\win32-py2.7\OpenSSL-Win32\libeay32.dll' />
+        </Component>
+        <Component Id='ssleay32_dll'
+          Guid='{24AEB8E6-3873-4401-828E-C5A3B59B9D64}'>
+          <File Id='SSLEAY32_DLL' Name='ssleay32.dll'
+           DiskId='1' Source='deps\win32-py2.7\OpenSSL-Win32\ssleay32.dll' />
+        </Component>
+      </Directory>
+    </Directory>
+
+    <Component Id="MINION_CONFIG_ENV"
+      Guid="{25AEB8E7-3773-4403-828E-C5A3B59B9D64}">
+      <Environment Id="SALT_MINION_CONFIG" Action="set" Part="all"
+        Name="SALT_MINION_CONFIG" 
+        Permanent="no" System="yes" Value="[TARGETDIR]salt\etc\minion" />
+    </Component>
+
+    <Directory Id='SaltDir' Name='salt'>
+      <Directory Id='PythonDir' Name='python'>
+        <Directory Id='DLLsDir' Name='DLLs'>
+          <Component Id='PYTHON27_DLL'
+            Guid='{24AEB8E6-3673-4401-828E-C5A3B59B9D64}'>
+            <File Id='python27_dll' Name='python27.dll'
+             DiskId='1' Source='deps/salt/python/App/python27.dll' />
+          </Component>
+          <Component Id='PYTHONCOM27_DLL'
+            Guid='{24AEB8E6-3673-4401-828E-C6A3B59B9D64}'>
+            <File Id='pythoncom27_dll' Name='pythoncom27.dll'
+             DiskId='1' Source='deps/salt/python/App/pythoncom27.dll' />
+          </Component>
+          <Component Id='PYTHONCOMLOADER27_DLL'
+            Guid='{24AEB8E6-3673-4401-828E-C7A3B59B9D64}'>
+            <File Id='pythoncomloader27_dll' Name='pythoncomloader27.dll'
+             DiskId='1' Source='deps/salt/python/App/pythoncomloader27.dll' />
+          </Component>
+          <Component Id='PYWINTYPES27_DLL'
+            Guid='{24AEB8E6-3673-4401-828E-C8A3B59B9D64}'>
+            <File Id='pywintypes27_dll' Name='pywintypes27.dll'
+             DiskId='1' Source='deps/salt/python/App/pywintypes27.dll' />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Component Id="PYWIN32_PATH_ENV"
+      Guid="{25AEB8E9-3774-4403-828E-C5A3B59B9D64}">
+      <Environment Id="PYWIN32_PATH" Action="set" Part="last"
+        Name="PATH"
+        Permanent="no" System="yes" Value="[TARGETDIR]salt\python\DLLs" />
+    </Component>
+
+  </Directory>
+
+  <Feature Id='Salt' Title='Python with all packages' Level='1'>
+    <ComponentGroupRef Id="PortableSalt" />
+    <ComponentRef Id="MINION_CONFIG_ENV" />
+    <ComponentRef Id="PYWIN32_PATH_ENV" />
+    <ComponentRef Id='ssleay32_dll' />
+    <ComponentRef Id='libeay32_dll' />
+    <ComponentRef Id='PYTHON27_DLL' />
+    <ComponentRef Id='PYTHONCOM27_DLL' />
+    <ComponentRef Id='PYTHONCOMLOADER27_DLL' />
+    <ComponentRef Id='PYWINTYPES27_DLL' />
+  </Feature>
+
+</Product>
+</Wix>
