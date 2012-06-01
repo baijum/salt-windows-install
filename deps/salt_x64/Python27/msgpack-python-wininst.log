@@ -1,0 +1,15 @@
+*** Installation started 2012/06/01 10:20 ***
+Source: C:\salt-windows-install\deps\win-amd64-py2.7\msgpack-python-0.1.12.win-amd64-py2.7.exe
+999 Root Key: HKEY_CURRENT_USER
+020 Reg DB Key: [Software\Microsoft\Windows\CurrentVersion\Uninstall]msgpack-python-py2.7
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\msgpack-python-py2.7]DisplayName=Python 2.7 msgpack-python-0.1.12
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\msgpack-python-py2.7]UninstallString="C:\Python27\Removemsgpack-python.exe" -u "C:\Python27\msgpack-python-wininst.log"
+200 File Copy: C:\Python27\Lib\site-packages\msgpack_python-0.1.12-py2.7.egg-info
+100 Made Dir: C:\Python27\Lib\site-packages\msgpack
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\_msgpack.pyd
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\__init__.py
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\__version__.py
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\__version__.pyc
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\__init__.pyc
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\__version__.pyo
+200 File Copy: C:\Python27\Lib\site-packages\msgpack\__init__.pyo
