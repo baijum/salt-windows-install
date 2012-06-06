@@ -82,13 +82,9 @@
       DiskId="1" Language="0"/>
   </DirectoryRef>
 
-  <Feature Id="VCRedist" Title="Visual C++ 9.0 Runtime"
-      AllowAdvertise="no" Display="hidden" Level="1">
-    <MergeRef Id="VCRedist"/>
-  </Feature>
-
 
   <Feature Id='Salt' Title='Python with all packages' Level='1'>
+    <MergeRef Id="VCRedist"/>
     <ComponentGroupRef Id="PortableSalt" />
     <ComponentRef Id="MINION_CONFIG_ENV" />
     <ComponentRef Id="PYWIN32_PATH_ENV" />
